@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-export default function ContactPage() {
+function Contact() {
   const {
     register,
     handleSubmit,
@@ -17,14 +17,14 @@ export default function ContactPage() {
   const onSubmit = (data) => {
     emailjs
       .send(
-        "service_nl8hxta", // Replace with EmailJS Service ID
-        "template_tlghezo", // Replace with EmailJS Template ID
+        "service_nl8hxta", // EmailJS Service ID
+        "template_ex7u2db", //  EmailJS Template ID
         {
           name: data.name,
           email: data.email,
           message: data.message,
         },
-        "YuxLAZXaKkCheUdTJ609V" // Replace with EmailJS Public Key
+        "o51dHNuIWoCqdooiR" //  EmailJS Public Key
       )
       .then(
         () => {
@@ -158,3 +158,43 @@ export default function ContactPage() {
     </div>
   );
 }
+export default Contact;
+
+///////////EMAILJS CODE SAMPLE//////////
+
+// import { useRef } from "react";
+// import emailjs from "@emailjs/browser";
+
+// const ContactUs = () => {
+//   const form = useRef();
+
+//   const sendEmail = (e) => {
+//     e.preventDefault();
+
+//     emailjs
+//       .sendForm("service_nl8hxta", "template_ex7u2db", form.current, {
+//         publicKey: "o51dHNuIWoCqdooiR",
+//       })
+//       .then(
+//         () => {
+//           console.log("SUCCESS!");
+//         },
+//         (error) => {
+//           console.log("FAILED...", error.text);
+//         }
+//       );
+//   };
+
+//   return (
+//     <form ref={form} onSubmit={sendEmail} className="mt-12 flex flex-col gap-4">
+//       <label>Name</label>
+//       <input type="text" name="user_name" />
+//       <label>Email</label>
+//       <input type="email" name="user_email" />
+//       <label>Message</label>
+//       <textarea name="message" />
+//       <input type="submit" value="Send" />
+//     </form>
+//   );
+// };
+// export default ContactUs;
