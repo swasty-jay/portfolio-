@@ -48,7 +48,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden bg-gray-800 p-4 mt-2 space-y-4 text-center">
+        <ul className="md:hidden bg-gray-800 p-4 mt-2 space-y-4 text-center backdrop/20">
           <li>
             <Link
               to="/"

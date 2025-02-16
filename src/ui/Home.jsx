@@ -13,7 +13,7 @@ export default function PortfolioLanding() {
         <motion.img
           src="/jay.jpg"
           alt="Profile"
-          className=" w-64 h-64 md:w-80 md:h-80 rounded-full  border-8 border-blue-400 shadow-lg md:ml-8"
+          className=" w-64 h-64 md:w-80 md:h-80 rounded-full   border-8 border-blue-400 shadow-lg md:ml-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2 }}
