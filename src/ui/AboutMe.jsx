@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function AboutMe() {
   return (
-    <section id="about" className="py-20 bg-gray-900 text-white">
+    <section className=" w-full h-full py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Profile Image */}
         <motion.div
@@ -44,6 +44,12 @@ function AboutMe() {
           <p className="text-gray-300 mt-4">
             When I'm not coding, I explore new tech trends and contribute to
             open-source projects. Let's build something **amazing** together! 🚀
+          </p>
+
+          <p className="text-gray-300 mt-4 font-serif">
+            I wrote my first line of code when I was [age], and it was a simple
+            'Hello, World!' program. Little did I know, that was the start of my
+            love affair with frontend development.
           </p>
 
           {/* Buttons */}
