@@ -3,10 +3,11 @@ import { Link } from "react-router";
 import Footer from "./Footer";
 import About from "./About";
 import Skills from "../features/Skills";
+import ScrollToTop from "../features/ScrollTop";
 
 export default function PortfolioLanding() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans">
+    <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row-reverse items-center justify-center h-screen text-center p-6">
         {/* Profile Image (Now on the Right) */}
@@ -27,7 +28,6 @@ export default function PortfolioLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2 }}
           >
-            Hi, I'm{" "}
             <span className="text-blue-400 uppercase">daniel amekpoagbe</span>
           </motion.h1>
           <motion.p
@@ -74,6 +74,7 @@ export default function PortfolioLanding() {
       </section>
       <Skills />
       <About />
+      <ScrollToTop />
       <Footer />
     </div>
   );
