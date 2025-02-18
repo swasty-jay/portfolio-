@@ -8,6 +8,7 @@ import {
   FaBriefcase,
   FaGraduationCap,
 } from "react-icons/fa";
+import Services from "../ui/Services";
 
 const skills = [
   {
@@ -153,6 +154,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        <Services />
       </div>
     </section>
   );
