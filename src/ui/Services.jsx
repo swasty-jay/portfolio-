@@ -27,7 +27,7 @@ const Services = () => {
     <section className="py-12 bg-gray-900 text-white">
       <div className="container mx-auto text-center">
         <motion.h2
-          className="text-3xl font-bold text-purple-400 mb-6"
+          className="text-3xl font-bold text-blue-400 mb-6"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -51,7 +51,7 @@ const Services = () => {
               viewport={{ once: true }}
             >
               <div className="text-left">
-                <span className="text-purple-400 font-semibold text-lg">
+                <span className="text-blue-300 font-semibold text-lg">
                   {String(service.id).padStart(2, "0")}
                 </span>
                 <h3 className="text-xl font-semibold mt-2">{service.title}</h3>
