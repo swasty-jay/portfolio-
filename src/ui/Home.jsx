@@ -28,7 +28,9 @@ export default function PortfolioLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2 }}
           >
-            <span className="text-blue-400 uppercase">daniel amekpoagbe</span>
+            <span className="text-blue-400 uppercase sm:text-xs">
+              daniel amekpoagbe
+            </span>
           </motion.h1>
           <motion.p
             className="text-xl mt-4 flex justify-center "
