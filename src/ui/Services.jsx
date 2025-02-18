@@ -57,7 +57,7 @@ const Services = () => {
                 <h3 className="text-xl font-semibold mt-2">{service.title}</h3>
                 <p className="text-gray-400 mt-2">{service.description}</p>
               </div>
-              <FaArrowRight className="text-purple-400 text-2xl transition-transform duration-300 hover:translate-x-2 ml-8" />
+              <FaArrowRight className="text-blue-300 text-2xl transition-transform duration-300 hover:translate-x-2 ml-8" />
             </motion.div>
           ))}
         </div>
