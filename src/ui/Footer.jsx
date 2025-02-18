@@ -12,10 +12,10 @@ const Footer = () => {
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Logo or Name */}
-        <div className="text-xl font-bold">Daniel </div>
+        <div className="text-xl font-bold uppercase">Daniel </div>
 
         {/* Navigation Links */}
-        <nav className="flex space-x-6 mt-4 md:mt-0 uppercase sm:hidden">
+        <nav className="flex space-x-6 mt-4 md:mt-0 uppercase ">
           <Link to="#about" className="hover:text-gray-400">
             About
           </Link>
@@ -28,6 +28,7 @@ const Footer = () => {
         </nav>
 
         {/* Social Media Links */}
+
         <div className="flex space-x-8 mt-4 md:mt-0">
           <a
             href="https://github.com/yourprofile"

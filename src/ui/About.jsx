@@ -28,7 +28,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-blue-400">About Me</h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <p className="mt-4 text-lg text-gray-300 font-semibold">
             Hi! I'm a passionate front-end developer with experience in React,
             Tailwind CSS, and Framer Motion. I love building interactive and
             user-friendly web applications.
