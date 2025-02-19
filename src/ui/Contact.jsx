@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
   const {
@@ -44,16 +45,47 @@ function Contact() {
     <div className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-12 gap-12">
       {/* Left Side - Image */}
       <motion.div
-        className="w-full md:w-1/2 hidden md:block"
+        className="w-full md:w-1/2 hidden md:block pl-12"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <img
-          src="/form-img.jpg"
-          alt="Contact"
-          className="w-full h-auto rounded-lg shadow-lg"
-        />
+        <div className="text-3xl uppercase ">
+          {/* Phone */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-blue-400 p-4 rounded-full">
+              <FaPhoneAlt className="text-white text-xl" />
+            </div>
+            <div>
+              <p className="text-gray-400 text-sm">Phone</p>
+              <p className="text-lg font-semibold">0245870688</p>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-blue-400 p-4 rounded-full">
+              <FaEnvelope className="text-white text-xl" />
+            </div>
+            <div>
+              <p className="text-gray-400 text-sm">Email</p>
+              <p className="text-lg font-semibold">
+                amekpoagbedaniel@gmail.com
+              </p>
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className="flex items-center gap-4">
+            <div className="bg-blue-400 p-4 rounded-full">
+              <FaMapMarkerAlt className="text-white text-xl" />
+            </div>
+            <div>
+              <p className="text-gray-400 text-sm">Address</p>
+              <p className="text-lg font-semibold">Tema Ghana</p>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Right Side - Form */}
@@ -63,9 +95,13 @@ function Contact() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-3xl font-bold text-center text-blue-400 mb-6">
-          Get In Touch
+        <h2 className="text-3xl font-bold text-center text-blue-400 mb-4">
+          Let’s work together!
         </h2>
+        <span className="text-gray-400 mb-4 font-sans">
+          I code beautifully simple things and i love what i do. Just simple
+          like that!
+        </span>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name Field */}

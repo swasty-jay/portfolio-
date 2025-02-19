@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function AboutMe() {
   return (
-    <section className=" w-full h-full py-20 bg-gray-900 text-white">
+    <section className=" w-full  py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Profile Image */}
         <motion.div

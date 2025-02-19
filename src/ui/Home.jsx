@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+// import { Link } from "react-router-dom";
+import { FaTwitter, FaDribbble, FaLinkedin, FaGithub } from "react-icons/fa";
 import Footer from "./Footer";
 import About from "./About";
 import Skills from "../features/Skills";
@@ -9,71 +10,96 @@ export default function PortfolioLanding() {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row-reverse items-center justify-center h-screen text-center p-6">
-        {/* Profile Image (Now on the Right) */}
-        <motion.img
-          src="/jay.jpg"
-          alt="Profile"
-          className=" w-64 h-64 md:w-80 md:h-80 rounded-full   border-8 border-blue-400 shadow-lg md:ml-8"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
-        />
-
-        {/* Text Content (Now on the Left) */}
-        <div className="md:mr-8 mt-6 md:mt-0">
+      <section className="flex flex-col md:flex-row items-center justify-center h-screen text-left px-6 md:px-16 lg:px-24 py-12 gap-8">
+        {/* Left Content (Text & Image on Small Screens) */}
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <motion.h1
-            className="text-5xl font-bold"
+            className="text-3xl md:text-5xl font-bold text-white"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
           >
-            <span className="text-blue-400 uppercase sm:text-xs">
-              daniel amekpoagbe
-            </span>
+            I am <span className="text-gray-300">Daniel Amekpoagbe</span>
           </motion.h1>
+
+          <motion.h2
+            className="text-4xl md:text-6xl font-bold text-purple-400 mt-2"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+          >
+            Next-Level Web Developer.
+          </motion.h2>
+
+          {/* Image (Between h2 and p on Small Screens) */}
+          <motion.div
+            className="w-full flex justify-center my-6 md:hidden"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            <img
+              src="/jay.jpg"
+              alt="Profile"
+              className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-[20%] border border-purple-400 shadow-lg"
+            />
+          </motion.div>
+
           <motion.p
-            className="text-xl mt-4 flex justify-center "
+            className="text-gray-400 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1.5 }}
           >
-            Front-End Developer | React Enthusiast |<br /> JavaScript & Tailwind
-            Lover |<br /> Crafting Smooth & Responsive UIs
+            I break down complex user experience problems to create
+            integrity-focused solutions that connect billions of people.
           </motion.p>
-          <div className="flex space-x-4 mt-6 items-center justify-center">
-            {/* View My Work Button */}
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link
-                to="/projects"
-                className="px-6 py-3 bg-blue-500 text-white hover:bg-blue-600 rounded-lg text-lg inline-block"
-              >
-                View My Work
-              </Link>
-            </motion.div>
 
-            {/* Hire Me Button (Outlined) */}
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
+          {/* Buttons & Social Media */}
+          <div className="flex flex-col sm:flex-row items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+            <motion.button
               whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
+              className="bg-purple-600 text-white px-6 py-3 rounded-full text-lg border border-purple-400 flex items-center"
             >
-              <Link
-                to="/contact"
-                className="px-6 py-3 border-2 border-blue-500 text-blue-500 uppercase hover:bg-blue-500 hover:text-white rounded-lg text-lg inline-block"
-              >
-                Hire Me
-              </Link>
-            </motion.div>
+              Download CV <span className="ml-2">📄</span>
+            </motion.button>
+
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
+              {[FaTwitter, FaDribbble, FaLinkedin, FaGithub].map(
+                (Icon, index) => (
+                  <motion.a
+                    key={index}
+                    href="#"
+                    className="text-gray-400 text-2xl hover:text-purple-400"
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Icon />
+                  </motion.a>
+                )
+              )}
+            </div>
           </div>
         </div>
+
+        {/* Image on Larger Screens (Right Side) */}
+        <motion.div
+          className="hidden md:flex w-full md:w-1/2 justify-center md:justify-end"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+          <img
+            src="/jay.jpg"
+            alt="Profile"
+            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-[20%] border border-purple-400 shadow-lg"
+          />
+        </motion.div>
       </section>
+
+      {/* Other Sections */}
       <Skills />
       <About />
       <ScrollToTop />
