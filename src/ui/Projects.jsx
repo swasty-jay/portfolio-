@@ -4,37 +4,39 @@ const projects = [
   {
     id: 1,
     title: "Weather App",
-    description: "A dynamic weather forecasting app with live updates.",
-    image: "/assets/weather-app.png", // Replace with your image path
-    link: "#",
+    description:
+      "A fully responsive online pizza odering website built with React.",
+    image: "/pizza app.png", // Replace with your image path
+    link: "https://fast-pizza-wine.vercel.app/",
   },
   {
     id: 2,
     title: "E-commerce Store",
-    description: "A fully responsive online store built with React.",
-    image: "/assets/ecommerce.png", // Replace with your image path
-    link: "#",
+    description: "Accordion component built with React.",
+    image: "/accordion .png", // Replace with your image path
+    link: "https://accordion-mocha-eta.vercel.app/",
   },
+  // {
+  //   id: 3,
+  //   title: "Chat App",
+  //   description: "A real-time chat application with Firebase authentication.",
+  //   image: "/assets/chat-app.png", // Replace with your image path
+  //   link: "#",
+  // },
   {
     id: 3,
-    title: "Chat App",
-    description: "A real-time chat application with Firebase authentication.",
-    image: "/assets/chat-app.png", // Replace with your image path
-    link: "#",
+    title: "Atomic Blog",
+    description: "A blog website built with React.",
+    image: "/blog.png", // Replace with your image path
+    link: "https://atomic-blog-three.vercel.app/",
   },
   {
     id: 4,
-    title: "Chat App",
-    description: "A real-time chat application with Firebase authentication.",
-    image: "/assets/chat-app.png", // Replace with your image path
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Chat App",
-    description: "A real-time chat application with Firebase authentication.",
-    image: "/assets/chat-app.png", // Replace with your image path
-    link: "#",
+    title: "Todolist App",
+    description:
+      "A real-time application that allows users to create and manage tasks.",
+    image: "/todo.png", // Replace with your image path
+    link: "https://todo-list-silk-gamma.vercel.app/",
   },
 ];
 
@@ -44,7 +46,7 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         {/* Section Heading */}
         <motion.h2
-          className="text-4xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-blue-400"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

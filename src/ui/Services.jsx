@@ -24,7 +24,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-12 bg-gray-900 text-white px-4 sm:px-6 mt-6">
+    <section className="py-12 bg-gray-900 text-white px-4 sm:px-4 mt-6">
       <div className="container mx-auto text-center">
         <motion.h2
           className="text-3xl font-bold text-blue-400 mb-6"
