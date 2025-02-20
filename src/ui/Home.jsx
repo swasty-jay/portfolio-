@@ -42,7 +42,7 @@ export default function PortfolioLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden">
+    <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden sm:mt-4">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-center h-screen text-left px-6 md:px-16 lg:px-24 py-12 gap-8">
         {/* Left Content (Text & Image on Small Screens) */}
