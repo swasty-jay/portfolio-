@@ -3,7 +3,7 @@ import AppLayout from "./AppLayOut";
 import Home from "./ui/Home";
 import Projects from "./ui/Projects";
 import Contact from "./ui/Contact";
-import AboutMe from "./ui/AboutMe";
+import Services from "./ui/Services";
 
 const Router = createBrowserRouter([
   {
@@ -11,8 +11,8 @@ const Router = createBrowserRouter([
     // errorElement: <Error />, // Handles errors
     children: [
       { path: "/", element: <Home /> },
-      { path: "/aboutMe", element: <AboutMe /> },
       { path: "/projects", element: <Projects /> },
+      { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
     ],
   },

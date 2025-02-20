@@ -16,7 +16,7 @@ export default function PortfolioLanding() {
   const socialLinks = [
     {
       Icon: FaTwitter,
-      url: "https://twitter.com/yourusername",
+      url: "https://twitter.com/@jombotey",
       color: "text-blue-400",
     },
     {
@@ -36,7 +36,7 @@ export default function PortfolioLanding() {
     },
     {
       Icon: FaWhatsapp,
-      url: "https://wa.me/yourphonenumber",
+      url: "https://wa.me/+233245870688",
       color: "text-green-500",
     }, // WhatsApp
   ];

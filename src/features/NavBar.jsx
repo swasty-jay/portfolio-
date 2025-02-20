@@ -21,8 +21,8 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/AboutMe" className="hover:text-blue-400">
-              About
+            <Link to="/services" className="hover:text-blue-400">
+              services
             </Link>
           </li>
           <li>
@@ -36,6 +36,9 @@ function Navbar() {
             </Link>
           </li>
         </ul>
+        <button className="border-2 border-blue-500 font-semibold  px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition uppercase">
+          <Link to="/Contact">hire me !</Link>
+        </button>
 
         {/* Mobile Menu Button */}
         <button
