@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 // import { Link } from "react-router-dom";
-import {
-  FaTwitter,
-  FaDribbble,
-  FaLinkedin,
-  FaGithub,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import Footer from "./Footer";
 import About from "./About";
 import Skills from "../features/Skills";
@@ -19,19 +13,19 @@ export default function PortfolioLanding() {
       url: "https://twitter.com/@jombotey",
       color: "text-blue-400",
     },
-    {
-      Icon: FaDribbble,
-      url: "https://dribbble.com/yourusername",
-      color: "text-pink-400",
-    },
+    // {
+    //   Icon: FaDribbble,
+    //   url: "https://dribbble.com/yourusername",
+    //   color: "text-pink-400",
+    // },
     {
       Icon: FaLinkedin,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/amekpoagbe-daniel-a881712b5/",
       color: "text-blue-600",
     },
     {
       Icon: FaGithub,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/swasty-jay",
       color: "text-gray-600",
     },
     {
@@ -73,7 +67,7 @@ export default function PortfolioLanding() {
             transition={{ duration: 1.2 }}
           >
             <img
-              src="/header-pic.png"
+              src="/profile-.png"
               alt="Profile"
               className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-[20%] border border-blue-400 shadow-lg"
             />
@@ -91,13 +85,15 @@ export default function PortfolioLanding() {
 
           {/* Buttons & Social Media */}
           <div className="flex flex-col sm:flex-row items-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
-            <motion.button
+            <motion.a
+              href="/Resume.pdf"
+              download
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
               className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg border border-blue-400 flex items-center"
             >
               Download CV <span className="ml-2">📄</span>
-            </motion.button>
+            </motion.a>
             {/* Social Media Icons */}
 
             <div className="flex space-x-4">
@@ -126,7 +122,7 @@ export default function PortfolioLanding() {
           transition={{ duration: 2 }}
         >
           <img
-            src="/header-pic.png"
+            src="/profile-.png"
             alt="Profile"
             className="w-100 h-100 sm:w-72 sm:h-72 md:w-100 md:h-100 lg:w-96 lg:h-96 object-cover border-dotted rounded-[10%] border border-blue-400 shadow-lg"
           />

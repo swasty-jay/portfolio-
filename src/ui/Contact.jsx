@@ -69,7 +69,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-gray-400 text-sm">Email</p>
-              <p className="text-lg font-semibold">
+              <p className="text-lg font-semibold lowercase">
                 amekpoagbedaniel@gmail.com
               </p>
             </div>

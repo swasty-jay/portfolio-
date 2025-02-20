@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "Weather App",
+    title: "Pizza App",
     description:
       "A fully responsive online pizza odering website built with React.",
     image: "/pizza app.png", // Replace with your image path
@@ -11,7 +11,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "E-commerce Store",
+    title: "Accordion",
     description: "Accordion component built with React.",
     image: "/accordion .png", // Replace with your image path
     link: "https://accordion-mocha-eta.vercel.app/",
