@@ -38,7 +38,7 @@ export default function PortfolioLanding() {
       Icon: FaWhatsapp,
       url: "https://wa.me/+233245870688",
       color: "text-green-500",
-    }, // WhatsApp
+    },
   ];
 
   return (
