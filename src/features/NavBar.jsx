@@ -36,7 +36,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <button className="border-2 border-blue-500 font-semibold  px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition uppercase ">
+        <button className="border-2 border-blue-500 font-semibold ring-2 ring-blue-500/50  px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition uppercase ">
           <Link to="/Contact">hire me !</Link>
         </button>
 

@@ -9,49 +9,45 @@ function Contact() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  const onSubmit = (data) => {
-    emailjs
-      .send(
-        "service_nl8hxta", // EmailJS Service ID
-        "template_ex7u2db", //  EmailJS Template ID
+  const onSubmit = async (data) => {
+    try {
+      await emailjs.send(
+        "service_nl8hxta",
+        "template_ex7u2db",
         {
           name: data.name,
           email: data.email,
           message: data.message,
         },
-        "o51dHNuIWoCqdooiR" //  EmailJS Public Key
-      )
-      .then(
-        () => {
-          setModalMessage("Message Sent! ✅");
-          setIsModalOpen(true);
-          reset();
-        },
-        (error) => {
-          console.error("Error:", error);
-          setModalMessage("Failed to send message ❌");
-          setIsModalOpen(true);
-        }
+        "o51dHNuIWoCqdooiR"
       );
+
+      setModalMessage("Message Sent! ✅");
+      setIsModalOpen(true);
+      reset();
+    } catch (error) {
+      console.error("Error:", error);
+      setModalMessage("Failed to send message ❌");
+      setIsModalOpen(true);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-12 gap-12">
-      {/* Left Side - Image */}
+      {/* Left Side - Contact Info */}
       <motion.div
         className="w-full md:w-1/2 hidden md:block pl-12"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="text-3xl uppercase ">
-          {/* Phone */}
+        <div className="text-3xl uppercase">
           <div className="flex items-center gap-4 mb-6">
             <div className="bg-blue-400 p-4 rounded-full">
               <FaPhoneAlt className="text-white text-xl" />
@@ -62,27 +58,28 @@ function Contact() {
             </div>
           </div>
 
-          {/* Email */}
           <div className="flex items-center gap-4 mb-6">
             <div className="bg-blue-400 p-4 rounded-full">
               <FaEnvelope className="text-white text-xl" />
             </div>
             <div>
               <p className="text-gray-400 text-sm">Email</p>
-              <p className="text-lg font-semibold lowercase">
+              <a
+                href="mailto:amekpoagbedaniel@gmail"
+                className="text-lg font-semibold lowercase"
+              >
                 amekpoagbedaniel@gmail.com
-              </p>
+              </a>
             </div>
           </div>
 
-          {/* Address */}
           <div className="flex items-center gap-4">
             <div className="bg-blue-400 p-4 rounded-full">
               <FaMapMarkerAlt className="text-white text-xl" />
             </div>
             <div>
               <p className="text-gray-400 text-sm">Address</p>
-              <p className="text-lg font-semibold">Tema Ghana</p>
+              <p className="text-lg font-semibold">Tema, Ghana</p>
             </div>
           </div>
         </div>
@@ -99,12 +96,11 @@ function Contact() {
           Let’s work together!
         </h2>
         <span className="text-gray-400 mb-4 font-sans">
-          I code beautifully simple things and i love what i do. Just simple
+          I code beautifully simple things and I love what I do. Just simple
           like that!
         </span>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Name Field */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -121,7 +117,6 @@ function Contact() {
             )}
           </motion.div>
 
-          {/* Email Field */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -144,7 +139,6 @@ function Contact() {
             )}
           </motion.div>
 
-          {/* Message Field */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -161,23 +155,48 @@ function Contact() {
             )}
           </motion.div>
 
-          {/* Submit Button */}
+          {/* Submit Button with Loading State */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <button
-              type="submit"
-              className="w-full py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-lg"
-            >
-              Send Message
-            </button>
+            {isSubmitting ? (
+              <button
+                type="button"
+                className="w-full py-2 bg-blue-500 text-white rounded-lg flex items-center justify-center"
+                disabled
+              >
+                <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="white"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="white"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+                Sending...
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="w-full py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-lg"
+              >
+                Send Message
+              </button>
+            )}
           </motion.div>
         </form>
       </motion.div>
 
-      {/* MODAL POP-UP */}
+      {/* Modal Pop-up */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white text-black p-6 rounded-lg shadow-lg">
@@ -194,43 +213,5 @@ function Contact() {
     </div>
   );
 }
+
 export default Contact;
-
-///////////EMAILJS CODE SAMPLE//////////
-
-// import { useRef } from "react";
-// import emailjs from "@emailjs/browser";
-
-// const ContactUs = () => {
-//   const form = useRef();
-
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-
-//     emailjs
-//       .sendForm("service_nl8hxta", "template_ex7u2db", form.current, {
-//         publicKey: "o51dHNuIWoCqdooiR",
-//       })
-//       .then(
-//         () => {
-//           console.log("SUCCESS!");
-//         },
-//         (error) => {
-//           console.log("FAILED...", error.text);
-//         }
-//       );
-//   };
-
-//   return (
-//     <form ref={form} onSubmit={sendEmail} className="mt-12 flex flex-col gap-4">
-//       <label>Name</label>
-//       <input type="text" name="user_name" />
-//       <label>Email</label>
-//       <input type="email" name="user_email" />
-//       <label>Message</label>
-//       <textarea name="message" />
-//       <input type="submit" value="Send" />
-//     </form>
-//   );
-// };
-// export default ContactUs;

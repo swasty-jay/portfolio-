@@ -124,7 +124,7 @@ export default function PortfolioLanding() {
           <img
             src="/profile-.png"
             alt="Profile"
-            className="w-100 h-100 sm:w-72 sm:h-72 md:w-100 md:h-100 lg:w-96 lg:h-96 object-cover border-dotted rounded-[10%] border border-blue-400 shadow-lg"
+            className="w-100 h-100 sm:w-72 sm:h-72 md:w-100 md:h-100 lg:w-96 lg:h-96 object-cover border-double border-spacing-12 rounded-[10%] border border-blue-400 shadow-lg"
           />
         </motion.div>
       </section>
