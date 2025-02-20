@@ -10,10 +10,10 @@ function AboutMe() {
           className="w-full md:w-1/3 flex justify-center"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
         >
           <img
-            src="/assets/profile.png" // Replace with your image path
+            src="header-pic.png" // Replace with your image path
             alt="Profile"
             className="w-48 h-48 md:w-60 md:h-60 rounded-full shadow-lg"
           />

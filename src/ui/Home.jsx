@@ -1,12 +1,46 @@
 import { motion } from "framer-motion";
 // import { Link } from "react-router-dom";
-import { FaTwitter, FaDribbble, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaDribbble,
+  FaLinkedin,
+  FaGithub,
+  FaWhatsapp,
+} from "react-icons/fa";
 import Footer from "./Footer";
 import About from "./About";
 import Skills from "../features/Skills";
 import ScrollToTop from "../features/ScrollTop";
 
 export default function PortfolioLanding() {
+  const socialLinks = [
+    {
+      Icon: FaTwitter,
+      url: "https://twitter.com/yourusername",
+      color: "text-blue-400",
+    },
+    {
+      Icon: FaDribbble,
+      url: "https://dribbble.com/yourusername",
+      color: "text-pink-400",
+    },
+    {
+      Icon: FaLinkedin,
+      url: "https://linkedin.com/in/yourusername",
+      color: "text-blue-600",
+    },
+    {
+      Icon: FaGithub,
+      url: "https://github.com/yourusername",
+      color: "text-gray-600",
+    },
+    {
+      Icon: FaWhatsapp,
+      url: "https://wa.me/yourphonenumber",
+      color: "text-green-500",
+    }, // WhatsApp
+  ];
+
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden">
       {/* Hero Section */}
@@ -23,7 +57,7 @@ export default function PortfolioLanding() {
           </motion.h1>
 
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-purple-400 mt-2"
+            className="text-4xl md:text-6xl font-bold text-blue-400 mt-2"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
@@ -39,9 +73,9 @@ export default function PortfolioLanding() {
             transition={{ duration: 1.2 }}
           >
             <img
-              src="/jay.jpg"
+              src="/header-pic.png"
               alt="Profile"
-              className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-[20%] border border-purple-400 shadow-lg"
+              className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-[20%] border border-blue-400 shadow-lg"
             />
           </motion.div>
 
@@ -60,26 +94,26 @@ export default function PortfolioLanding() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
-              className="bg-purple-600 text-white px-6 py-3 rounded-full text-lg border border-purple-400 flex items-center"
+              className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg border border-blue-400 flex items-center"
             >
               Download CV <span className="ml-2">📄</span>
             </motion.button>
-
             {/* Social Media Icons */}
+
             <div className="flex space-x-4">
-              {[FaTwitter, FaDribbble, FaLinkedin, FaGithub].map(
-                (Icon, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    className="text-gray-400 text-2xl hover:text-purple-400"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Icon />
-                  </motion.a>
-                )
-              )}
+              {socialLinks.map(({ Icon, url, color }, index) => (
+                <motion.a
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-400 text-2xl hover:${color}`}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Icon />
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>
@@ -89,12 +123,12 @@ export default function PortfolioLanding() {
           className="hidden md:flex w-full md:w-1/2 justify-center md:justify-end"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 2 }}
         >
           <img
-            src="/jay.jpg"
+            src="/header-pic.png"
             alt="Profile"
-            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-[20%] border border-purple-400 shadow-lg"
+            className="w-100 h-100 sm:w-72 sm:h-72 md:w-100 md:h-100 lg:w-96 lg:h-96 object-cover border-dotted rounded-[10%] border border-blue-400 shadow-lg"
           />
         </motion.div>
       </section>
