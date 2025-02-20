@@ -51,7 +51,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden bg-gray-800 p-4 mt-2 space-y-4 text-center backdrop/20">
+        <ul className="md:hidden bg-gray-800 p-4 mt-2 space-y-4 text-center ">
           <li>
             <Link
               to="/"
@@ -63,11 +63,11 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/about"
+              to="/services"
               className="block hover:text-blue-400"
               onClick={() => setIsOpen(false)}
             >
-              About
+              Services
             </Link>
           </li>
           <li>
