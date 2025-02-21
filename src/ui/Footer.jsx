@@ -7,7 +7,7 @@ const Footer = () => {
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 2 }}
       className="bg-gray-900 text-white py-8 px-6"
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">

@@ -12,6 +12,12 @@ function Navbar() {
         <Link to="/" className="text-2xl font-bold text-blue-400">
           Daniel
         </Link>
+        {/* <a
+          href="mailto:amekpoagbedaniel@gmail"
+          className="text-lg font-semibold lowercase"
+        >
+          amekpoagbedaniel@gmail.com
+        </a> */}
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-lg">

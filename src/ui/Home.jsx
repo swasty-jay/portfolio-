@@ -95,7 +95,6 @@ export default function PortfolioLanding() {
               Download CV <span className="ml-2">📄</span>
             </motion.a>
             {/* Social Media Icons */}
-
             <div className="flex space-x-4">
               {socialLinks.map(({ Icon, url, color }, index) => (
                 <motion.a

@@ -29,13 +29,20 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-blue-400">About Me</h2>
           <p className="mt-4 text-lg text-gray-300 font-semibold">
-            Hi! I'm a passionate front-end developer with experience in React,
-            Tailwind CSS, and Framer Motion. I love building interactive and
-            user-friendly web applications.
+            Hi! I'm a passionate front-end developer with a strong foundation in
+            HTML, CSS, JavaScript, and modern frameworks like React. I
+            specialize in crafting visually appealing, responsive, and
+            high-performance web applications using Tailwind CSS, Bootstrap, and
+            Framer Motion.
           </p>
           <p className="mt-2 text-gray-400">
-            With a keen eye for design and performance, I aim to create seamless
-            digital experiences that stand out.
+            With a keen eye for design and user experience, I strive to build
+            seamless digital experiences that not only look great but also
+            function flawlessly across all devices. Whether it's creating sleek
+            UI components, optimizing for speed, or implementing smooth
+            animations, I love turning ideas into reality. My goal is to bridge
+            the gap between design and technology, ensuring every project is
+            intuitive, engaging, and future-proof.
           </p>
         </motion.div>
       </div>
