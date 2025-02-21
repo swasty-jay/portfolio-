@@ -56,7 +56,7 @@ const Footer = () => {
           </a>
           <a
             href="mailto:amekpoagbedaniel@gmail.com"
-            className="hover:text-gray-400"
+            className="hover:text-red-500 transition-colors"
           >
             <FaEnvelope size={24} />
           </a>
