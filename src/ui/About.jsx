@@ -15,7 +15,7 @@ const About = () => {
           <img
             src="/header-pic.png" // Replace with your image path
             alt="Profile"
-            className="w-96 h-96 md:w-96 md:h-96 rounded-full border-2 border-double border-blue-500 shadow-lg"
+            className="w-72 h-72 md:w-72 md:h-72 rounded-full border-2 border-double border-blue-500 shadow-lg"
           />
         </motion.div>
 
