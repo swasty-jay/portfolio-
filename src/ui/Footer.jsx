@@ -16,13 +16,13 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <nav className="flex space-x-6 mt-4 md:mt-0 uppercase ">
-          <Link to="#about" className="hover:text-gray-400">
-            About
+          <Link to="/services" className="hover:text-gray-400">
+            Services
           </Link>
-          <Link to="#projects" className="hover:text-gray-400">
+          <Link to="/projects" className="hover:text-gray-400">
             Projects
           </Link>
-          <Link to="#contact" className="hover:text-gray-400">
+          <Link to="/contact" className="hover:text-gray-400">
             Contact
           </Link>
         </nav>
@@ -31,7 +31,7 @@ const Footer = () => {
 
         <div className="flex space-x-8 mt-4 md:mt-0">
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/swasty-jay"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400"
@@ -39,22 +39,25 @@ const Footer = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://twitter.com/yourprofile"
+            href="https://twitter.com/@jombotey"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-400"
+            className="hover:text-blue-400"
           >
             <FaTwitter size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/amekpoagbe-daniel-a881712b5/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-400"
+            className="hover:text-blue-700"
           >
             <FaLinkedin size={24} />
           </a>
-          <a href="mailto:your@email.com" className="hover:text-gray-400">
+          <a
+            href="mailto:amekpoagbedaniel@gmail.com"
+            className="hover:text-gray-400"
+          >
             <FaEnvelope size={24} />
           </a>
         </div>
