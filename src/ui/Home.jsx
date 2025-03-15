@@ -67,7 +67,7 @@ export default function PortfolioLanding() {
             transition={{ duration: 1.2 }}
           >
             <img
-              src="/profile-.png"
+              src="/p1.jpg"
               alt="Profile"
               className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-[20%] border border-blue-400 shadow-lg"
             />
@@ -121,7 +121,7 @@ export default function PortfolioLanding() {
           transition={{ duration: 2 }}
         >
           <img
-            src="/profile-.png"
+            src="/p1.jpg"
             alt="Profile"
             className="w-100 h-100 sm:w-72 sm:h-72 md:w-100 md:h-100 lg:w-96 lg:h-96 object-cover border-double border-spacing-12 rounded-[10%] border border-blue-400 shadow-lg"
           />

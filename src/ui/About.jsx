@@ -13,7 +13,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <img
-            src="/header-pic.png" // Replace with your image path
+            src="/P2.jpg" // Replace with your image path
             alt="Profile"
             className="w-72 h-72 md:w-72 md:h-72 rounded-full border-2 border-double border-blue-500 shadow-lg"
           />
