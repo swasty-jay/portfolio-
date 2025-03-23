@@ -13,11 +13,7 @@ export default function PortfolioLanding() {
       url: "https://twitter.com/@jombotey",
       color: "text-blue-400",
     },
-    // {
-    //   Icon: FaDribbble,
-    //   url: "https://dribbble.com/yourusername",
-    //   color: "text-pink-400",
-    // },
+
     {
       Icon: FaLinkedin,
       url: "https://www.linkedin.com/in/amekpoagbe-daniel-a881712b5/",

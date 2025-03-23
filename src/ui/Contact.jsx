@@ -50,13 +50,13 @@ function Contact() {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left Side - Contact Info */}
         <motion.div
-          className="w-full md:w-1/2"
+          className="w-full md:w-1/2 hidden md:block"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-blue-400 mb-8">
+          <h2 className="text-lg md:text-3xl font-bold text-blue-400 mb-8">
             Get in Touch
           </h2>
           <div className="space-y-8">
@@ -111,7 +111,7 @@ function Contact() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center text-blue-400 mb-4">
+          <h2 className="text-lg md:text-3xl font-bold text-center text-blue-400 mb-4">
             Send Me a Message
           </h2>
           <p className="text-gray-300 text-center mb-6">
