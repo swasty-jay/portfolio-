@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
         >
           <img
             src="/P2.jpg" // Replace with your image path
-            alt="Profile"
+            alt="Profile of a Front-End Developer"
             className="w-72 h-72 md:w-72 md:h-72 rounded-full border-2 border-double border-blue-500 shadow-lg"
           />
         </motion.div>
@@ -29,21 +30,25 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-blue-400">About Me</h2>
           <p className="mt-4 text-lg text-gray-300 font-semibold">
-            Hi! I'm a passionate front-end developer with a strong foundation in
-            HTML, CSS, JavaScript, and modern frameworks like React. I
-            specialize in crafting visually appealing, responsive, and
-            high-performance web applications using Tailwind CSS, Bootstrap, and
-            Framer Motion.
+            Hello! I’m a dedicated front-end developer skilled in HTML, CSS,
+            JavaScript, and frameworks like React. I focus on building
+            responsive, visually appealing, and efficient web applications using
+            tools such as Tailwind CSS, Bootstrap, and Framer Motion.
           </p>
           <p className="mt-2 text-gray-400">
-            With a keen eye for design and user experience, I strive to build
-            seamless digital experiences that not only look great but also
-            function flawlessly across all devices. Whether it's creating sleek
-            UI components, optimizing for speed, or implementing smooth
-            animations, I love turning ideas into reality. My goal is to bridge
-            the gap between design and technology, ensuring every project is
-            intuitive, engaging, and future-proof.
+            I’m passionate about creating intuitive user experiences that
+            combine great design with seamless functionality. My work involves
+            developing clean UI components, optimizing performance, and adding
+            dynamic animations to bring projects to life. I aim to deliver
+            high-quality solutions that adapt to all devices and meet modern
+            standards.
           </p>
+          <Link
+            to="/contact" // Replace with your contact section ID or link
+            className="mt-6 inline-block px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-300"
+          >
+            Get in Touch
+          </Link>
         </motion.div>
       </div>
     </section>

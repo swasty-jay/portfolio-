@@ -12,12 +12,6 @@ function Navbar() {
         <Link to="/" className="text-2xl font-bold text-blue-400">
           Daniel
         </Link>
-        {/* <a
-          href="mailto:amekpoagbedaniel@gmail"
-          className="text-lg font-semibold lowercase"
-        >
-          amekpoagbedaniel@gmail.com
-        </a> */}
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-lg">
@@ -42,10 +36,12 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <button className="border-2 border-blue-500 font-semibold ring-2 ring-blue-500/50  px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition uppercase ">
-          <Link to="/Contact">hire me !</Link>
+        <button className="relative px-6 py-2 border-2 border-blue-500 font-semibold text-blue-500 rounded-full bg-transparent hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out uppercase tracking-wide shadow-md hover:shadow-lg group overflow-hidden">
+          <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></span>
+          <Link to="/Contact" className="relative z-10">
+            Hire Me
+          </Link>
         </button>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-2xl"

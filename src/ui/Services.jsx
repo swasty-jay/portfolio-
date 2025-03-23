@@ -36,8 +36,8 @@ const Services = () => {
           My Quality Services
         </motion.h2>
         <p className="text-gray-400 mb-8">
-          We put your ideas and thus your wishes in the form of a unique web
-          project that inspires you and your customers.
+          I transform your vision into impactful digital solutions, designed to
+          engage your audience and meet your goals.
         </p>
 
         <div className="space-y-6 max-w-3xl mx-auto">
@@ -45,9 +45,14 @@ const Services = () => {
             <motion.div
               key={service.id}
               className="p-6 rounded-lg flex justify-between items-center  transition duration-300  hover:bg-gray-800"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{
+                duration: 0.3,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
               viewport={{ once: true }}
             >
               <div className="text-left">

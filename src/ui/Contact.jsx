@@ -2,7 +2,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaUser,
+  FaComment,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 function Contact() {
   const {
@@ -28,189 +35,236 @@ function Contact() {
         "o51dHNuIWoCqdooiR"
       );
 
-      setModalMessage("Message Sent! ✅");
+      setModalMessage("Message Sent Successfully! ✅");
       setIsModalOpen(true);
       reset();
     } catch (error) {
       console.error("Error:", error);
-      setModalMessage("Failed to send message ❌");
+      setModalMessage("Failed to Send Message ❌");
       setIsModalOpen(true);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-12 gap-12">
-      {/* Left Side - Contact Info */}
-      <motion.div
-        className="w-full md:w-1/2 hidden md:block pl-12"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="text-3xl uppercase">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="bg-blue-400 p-4 rounded-full">
-              <FaPhoneAlt className="text-white text-xl" />
+    <section className="min-h-screen bg-gray-900 text-white py-16 px-6 md:px-16">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+        {/* Left Side - Contact Info */}
+        <motion.div
+          className="w-full md:w-1/2"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold text-blue-400 mb-8">
+            Get in Touch
+          </h2>
+          <div className="space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="bg-blue-500 p-3 rounded-full shadow-md">
+                <FaPhoneAlt className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm uppercase tracking-wide">
+                  Phone
+                </p>
+                <p className="text-lg font-semibold">+233 245 870 688</p>
+              </div>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Phone</p>
-              <p className="text-lg font-semibold">0245870688</p>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-blue-500 p-3 rounded-full shadow-md">
+                <FaEnvelope className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm uppercase tracking-wide">
+                  Email
+                </p>
+                <a
+                  href="mailto:amekpoagbedaniel@gmail.com"
+                  className="text-lg font-semibold lowercase hover:text-blue-400 transition-colors duration-300"
+                >
+                  amekpoagbedaniel@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-blue-500 p-3 rounded-full shadow-md">
+                <FaMapMarkerAlt className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm uppercase tracking-wide">
+                  Location
+                </p>
+                <p className="text-lg font-semibold">Tema, Ghana</p>
+              </div>
             </div>
           </div>
+        </motion.div>
 
-          <div className="flex items-center gap-4 mb-6">
-            <div className="bg-blue-400 p-4 rounded-full">
-              <FaEnvelope className="text-white text-xl" />
-            </div>
-            <div>
-              <p className="text-gray-400 text-sm">Email</p>
-              <a
-                href="mailto:amekpoagbedaniel@gmail"
-                className="text-lg font-semibold lowercase"
-              >
-                amekpoagbedaniel@gmail.com
-              </a>
-            </div>
-          </div>
+        {/* Right Side - Form */}
+        <motion.div
+          className="w-full md:w-1/2 bg-gray-800 p-8 rounded-xl shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-center text-blue-400 mb-4">
+            Send Me a Message
+          </h2>
+          <p className="text-gray-300 text-center mb-6">
+            Let’s collaborate to bring your ideas to life!
+          </p>
 
-          <div className="flex items-center gap-4">
-            <div className="bg-blue-400 p-4 rounded-full">
-              <FaMapMarkerAlt className="text-white text-xl" />
-            </div>
-            <div>
-              <p className="text-gray-400 text-sm">Address</p>
-              <p className="text-lg font-semibold">Tema, Ghana</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <label className="block text-gray-300 mb-1">Name</label>
+              <div className="relative">
+                <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  {...register("name", { required: "Name is required" })}
+                  className="w-full pl-10 p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  placeholder="Your Name"
+                />
+              </div>
+              {errors.name && (
+                <p
+                  className="text-red-500 text-sm mt-1……
 
-      {/* Right Side - Form */}
-      <motion.div
-        className="w-full md:w-1/2 bg-gray-800 p-8 rounded-lg shadow-lg"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 className="text-3xl font-bold text-center text-blue-400 mb-4">
-          Let’s work together!
-        </h2>
-        <span className="text-gray-400 mb-4 font-sans">
-          I code beautifully simple things and I love what I do. Just simple
-          like that!
-        </span>
+"
+                >
+                  {errors.name.message}
+                </p>
+              )}
+            </motion.div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <label className="block">Name:</label>
-            <input
-              {...register("name", { required: "Name is required" })}
-              className="border p-2 rounded w-full bg-gray-700 text-white"
-              placeholder="Your Name"
-            />
-            {errors.name && (
-              <p className="text-red-500">{errors.name.message}</p>
-            )}
-          </motion.div>
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <label className="block text-gray-300 mb-1">Email</label>
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Invalid email format",
+                    },
+                  })}
+                  className="w-full pl-10 p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  placeholder="Your Email"
+                />
+              </div>
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.email.message}
+                </p>
+              )}
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <label className="block">Email:</label>
-            <input
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Invalid email format",
-                },
-              })}
-              className="border p-2 rounded w-full bg-gray-700 text-white"
-              placeholder="Your Email"
-            />
-            {errors.email && (
-              <p className="text-red-500">{errors.email.message}</p>
-            )}
-          </motion.div>
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <label className="block text-gray-300 mb-1">Message</label>
+              <div className="relative">
+                <FaComment className="absolute left-3 top-5 text-gray-400" />
+                <textarea
+                  {...register("message", { required: "Message is required" })}
+                  className="w-full pl-10 p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none h-32 resize-none"
+                  placeholder="Your Message"
+                />
+              </div>
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          >
-            <label className="block">Message:</label>
-            <textarea
-              {...register("message", { required: "Message is required" })}
-              className="border p-2 rounded w-full bg-gray-700 text-white h-28"
-              placeholder="Your Message"
-            />
-            {errors.message && (
-              <p className="text-red-500">{errors.message.message}</p>
-            )}
-          </motion.div>
-
-          {/* Submit Button with Loading State */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-          >
-            {isSubmitting ? (
-              <button
-                type="button"
-                className="w-full py-2 bg-blue-500 text-white rounded-lg flex items-center justify-center"
-                disabled
-              >
-                <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="white"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="white"
-                    d="M4 12a8 8 0 018-8v8H4z"
-                  ></path>
-                </svg>
-                Sending...
-              </button>
-            ) : (
-              <button
-                type="submit"
-                className="w-full py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-lg"
-              >
-                Send Message
-              </button>
-            )}
-          </motion.div>
-        </form>
-      </motion.div>
+            {/* Submit Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {isSubmitting ? (
+                <button
+                  type="button"
+                  className="w-full py-3 bg-blue-500 text-white rounded-lg flex items-center justify-center opacity-75 cursor-not-allowed"
+                  disabled
+                >
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="white"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="white"
+                      d="M4 12a8 8 0 018-8v8H4z"
+                    />
+                  </svg>
+                  Sending...
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out"
+                >
+                  <FaPaperPlane className="mr-2" />
+                  Send Message
+                </button>
+              )}
+            </motion.div>
+          </form>
+        </motion.div>
+      </div>
 
       {/* Modal Pop-up */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <p>{modalMessage}</p>
+        <motion.div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <div className="bg-white text-black p-8 rounded-xl shadow-2xl max-w-sm w-full">
+            <p className="text-lg font-semibold text-center">{modalMessage}</p>
             <button
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="mt-6 w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
               onClick={() => setIsModalOpen(false)}
             >
-              OK
+              Close
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </section>
   );
 }
 
