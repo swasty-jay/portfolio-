@@ -47,7 +47,7 @@ const experiences = [
   {
     year: "2024 - 2025",
     title: "JAVASCRIPT & REACT",
-    place: "Udemy",
+    place: "self thought",
   },
 ];
 
@@ -66,7 +66,7 @@ const education = [
 
 const Skills = () => {
   return (
-    <section className="py-12 bg-gray-900 text-white px-4 sm:px-6">
+    <section className="py-4 bg-gray-900 text-white px-4 sm:px-6">
       <div className="container mx-auto text-center">
         <motion.h2
           className="text-3xl font-bold text-blue-400 mb-6"

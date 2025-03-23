@@ -32,22 +32,22 @@ export default function PortfolioLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden pt-12">
+    <div className="min-h-screen bg-gray-900 text-white font-sans w-full overflow-hidden pt-2">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-center h-screen text-left px-6 md:px-16 lg:px-24 py-12 gap-8">
         {/* Left Content (Text & Image on Small Screens) */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <motion.h1
-            className="text-3xl md:text-5xl font-bold text-white"
+            className=" md:text-5xl   bg-gradient-to-r from-violet-700 to-violet-300 bg-clip-text text-5xl font-extrabold text-transparent"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            I am <span className="text-gray-300">Daniel Amekpoagbe</span>
+            I am <span>Daniel Amekpoagbe</span>
           </motion.h1>
 
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-blue-400 mt-2"
+            className="text-2xl md:text-6xl font-bold text-blue-400 mt-2"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
