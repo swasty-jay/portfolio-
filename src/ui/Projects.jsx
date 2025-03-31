@@ -1,5 +1,32 @@
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt } from "react-icons/fa"; // Added for external link icon
+import {
+  FaExternalLinkAlt,
+  FaReact,
+  FaCss3Alt,
+  FaJsSquare,
+  FaBootstrap,
+  FaNodeJs,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiSupabase,
+  SiFirebase,
+  SiReactquery,
+  SiRedux,
+} from "react-icons/si";
+
+const techIcons = {
+  React: <FaReact className="text-blue-400" />,
+  "Tailwind CSS": <SiTailwindcss className="text-teal-400" />,
+  JavaScript: <FaJsSquare className="text-yellow-400" />,
+  Bootstrap: <FaBootstrap className="text-purple-500" />,
+  Supabase: <SiSupabase className="text-green-500" />,
+  Firebase: <SiFirebase className="text-orange-500" />,
+  CSS3: <FaCss3Alt className="text-blue-500" />,
+  "Node.js": <FaNodeJs className="text-green-600" />,
+  ReactQuery: <SiReactquery className="text-red-500" />,
+  Redux: <SiRedux className="text bg-purple-500" />,
+};
 
 const projects = [
   {
@@ -7,33 +34,37 @@ const projects = [
     title: "Pizza App",
     description:
       "A fully responsive online pizza ordering platform built with React, featuring seamless navigation and a modern design.",
-    image: "/pizza app.png", // Replace with your image path
+    image: "/pizza app.png",
     link: "https://fast-pizza-wine.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "Redux"],
   },
   {
     id: 2,
     title: "Accordion",
     description:
       "A reusable Accordion component developed with React, showcasing smooth animations and clean code.",
-    image: "/accordion .png", // Replace with your image path
+    image: "/accordion .png",
     link: "https://accordion-mocha-eta.vercel.app/",
+    technologies: ["React", "CSS3", "JavaScript"],
   },
   {
     id: 3,
     title: "Domus",
     description:
       "A sleek real estate website built with React, showcasing a modern and user-friendly interface.",
-    image: "/Domus .png", // Replace with your image path
+    image: "/Domus .png",
     link: "https://domus-indol.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "Supabase"],
   },
-  {
-    id: 4,
-    title: "Todolist App",
-    description:
-      "A real-time task management application built with React, enabling users to efficiently create and organize tasks.",
-    image: "/todo.png", // Replace with your image path
-    link: "https://todo-list-silk-gamma.vercel.app/",
-  },
+  // {
+  //   id: 4,
+  //   title: "Todolist App",
+  //   description:
+  //     "A real-time task management application built with React, enabling users to efficiently create and organize tasks.",
+  //   image: "/todo.png",
+  //   link: "https://todo-list-silk-gamma.vercel.app/",
+  //   technologies: ["React", "Firebase", "JavaScript"],
+  // },
 ];
 
 const Projects = () => {
@@ -59,10 +90,10 @@ const Projects = () => {
               className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.1 }}
               transition={{
-                duration: 0.6,
-                delay: index * 0.2,
+                duration: 0.2,
+                delay: index * 0.1,
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
@@ -85,6 +116,19 @@ const Projects = () => {
                 <p className="text-gray-300 mt-2 text-base">
                   {project.description}
                 </p>
+
+                {/* Tech Stack */}
+                <div className="mt-4 flex gap-4 text-2xl">
+                  {project.technologies.map((tech, idx) => (
+                    <div key={idx} className="tooltip" data-tooltip={tech}>
+                      {techIcons[tech] || (
+                        <span className="text-gray-400">{tech}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Project Link */}
                 <a
                   href={project.link}
                   target="_blank"

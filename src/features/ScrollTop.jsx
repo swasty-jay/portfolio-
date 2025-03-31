@@ -33,7 +33,7 @@ const ScrollToTop = () => {
         transition={{ duration: 0.3 }}
         className="fixed bottom-6 right-6 bg-sky-500 text-white p-3 rounded-full shadow-lg hover:bg-sky-600"
       >
-        <FaArrowUp size={24} />
+        <FaArrowUp size={20} />
       </motion.button>
     )
   );
