@@ -3,20 +3,22 @@ import {
   FaSearch,
   FaPenNib,
   FaCode,
-  FaCheckCircle,
   FaRocket,
+  FaDraftingCompass,
 } from "react-icons/fa";
+import illustration from "/illustration.svg"; // Add an illustration in your assets
+
 const steps = [
   {
     id: 1,
     title: "Understanding the Client’s Vision",
     description: (
       <>
-        🔹 Asking key questions to clarify the **project scope**.
+        🔹 Asking key questions to clarify the project scope.
         <br />
-        🔹 Understanding the **target audience & goals**.
+        🔹 Understanding the target audience & goals.
         <br />
-        🔹 Gathering **inspiration & feature ideas**.
+        🔹 Gathering inspiration & feature ideas.
       </>
     ),
     icon: <FaSearch />,
@@ -26,11 +28,11 @@ const steps = [
     title: "Research & Planning",
     description: (
       <>
-        🔹 Analyzing **competitors & market trends**.
+        🔹 Analyzing competitors & market trends.
         <br />
-        🔹 Choosing the **best tech stack** for scalability.
+        🔹 Choosing the best tech stack for scalability.
         <br />
-        🔹 Structuring a **project roadmap & milestones**.
+        🔹 Structuring a project roadmap & milestones.
       </>
     ),
     icon: <FaPenNib />,
@@ -40,9 +42,9 @@ const steps = [
     title: "Wireframing & Prototyping",
     description: (
       <>
-        🔹 Creating **low-fidelity wireframes** for layout ideas.
+        🔹 Creating low-fidelity wireframes for layout ideas.
         <br />
-        🔹 Designing **high-fidelity UI prototypes**.
+        🔹 Designing high-fidelity UI prototypes.
         <br />
         🔹 Gathering feedback before moving to development.
       </>
@@ -54,11 +56,11 @@ const steps = [
     title: "Development & Testing",
     description: (
       <>
-        🔹 Writing **clean, optimized, and scalable code**.
+        🔹 Writing clean, optimized, and scalable code.
         <br />
-        🔹 Ensuring **responsiveness across all devices**.
+        🔹 Ensuring responsiveness across all devices.
         <br />
-        🔹 Conducting **manual & automated testing**.
+        🔹 Conducting manual & automated testing.
       </>
     ),
     icon: <FaCode />,
@@ -68,11 +70,11 @@ const steps = [
     title: "Client Review & Deployment",
     description: (
       <>
-        🔹 Presenting the project for **client feedback**.
+        🔹 Presenting the project for client feedback.
         <br />
-        🔹 Making final **adjustments & improvements**.
+        🔹 Making final adjustments & improvements.
         <br />
-        🔹 **Deploying** the project and monitoring performance.
+        🔹 Deploying the project and monitoring performance.
       </>
     ),
     icon: <FaRocket />,
@@ -82,20 +84,18 @@ const steps = [
 const ProcessTimeline = () => {
   return (
     <section className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-6">
-        {/* Section Heading */}
-        <motion.h2
-          className="text-4xl font-bold text-center text-blue-400 mb-12"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          My Process: From Idea to Code
-        </motion.h2>
-
-        {/* Timeline */}
-        <div className="relative">
+      <motion.h2
+        className="text-4xl font-bold text-center text-blue-400 mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        My Process: From Idea to Code
+      </motion.h2>
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
+        {/* Left Side: Timeline */}
+        <div className="lg:w-1/2 relative">
           {/* Vertical Line */}
           <div className="absolute left-5 top-0 bottom-0 w-1 bg-gray-600"></div>
 
@@ -128,6 +128,21 @@ const ProcessTimeline = () => {
             ))}
           </div>
         </div>
+
+        {/* Right Side: Illustration */}
+        <motion.div
+          className="lg:w-1/2  hidden md:block justify-center mt-12 lg:mt-0"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <img
+            src={illustration}
+            alt="Process Illustration"
+            className="w-full max-w-lg"
+          />
+        </motion.div>
       </div>
     </section>
   );
