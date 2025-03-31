@@ -6,41 +6,75 @@ import {
   FaCheckCircle,
   FaRocket,
 } from "react-icons/fa";
-
 const steps = [
   {
     id: 1,
     title: "Understanding the Client’s Vision",
-    description:
-      "I start by discussing the project goals, target audience, and key features.",
+    description: (
+      <>
+        🔹 Asking key questions to clarify the **project scope**.
+        <br />
+        🔹 Understanding the **target audience & goals**.
+        <br />
+        🔹 Gathering **inspiration & feature ideas**.
+      </>
+    ),
     icon: <FaSearch />,
   },
   {
     id: 2,
     title: "Research & Planning",
-    description:
-      "I analyze competitors, choose the best tech stack, and create a structured plan.",
+    description: (
+      <>
+        🔹 Analyzing **competitors & market trends**.
+        <br />
+        🔹 Choosing the **best tech stack** for scalability.
+        <br />
+        🔹 Structuring a **project roadmap & milestones**.
+      </>
+    ),
     icon: <FaPenNib />,
   },
   {
     id: 3,
     title: "Wireframing & Prototyping",
-    description:
-      "I sketch UI layouts and create prototypes to visualize the structure.",
-    icon: <FaCode />,
+    description: (
+      <>
+        🔹 Creating **low-fidelity wireframes** for layout ideas.
+        <br />
+        🔹 Designing **high-fidelity UI prototypes**.
+        <br />
+        🔹 Gathering feedback before moving to development.
+      </>
+    ),
+    icon: <FaDraftingCompass />,
   },
   {
     id: 4,
     title: "Development & Testing",
-    description:
-      "I start coding the project, ensuring responsiveness and performance.",
-    icon: <FaCheckCircle />,
+    description: (
+      <>
+        🔹 Writing **clean, optimized, and scalable code**.
+        <br />
+        🔹 Ensuring **responsiveness across all devices**.
+        <br />
+        🔹 Conducting **manual & automated testing**.
+      </>
+    ),
+    icon: <FaCode />,
   },
   {
     id: 5,
     title: "Client Review & Deployment",
-    description:
-      "I share the project for feedback, refine it, and deploy the final version.",
+    description: (
+      <>
+        🔹 Presenting the project for **client feedback**.
+        <br />
+        🔹 Making final **adjustments & improvements**.
+        <br />
+        🔹 **Deploying** the project and monitoring performance.
+      </>
+    ),
     icon: <FaRocket />,
   },
 ];

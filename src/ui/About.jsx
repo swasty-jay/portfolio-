@@ -40,7 +40,7 @@ const About = () => {
             to="/timeline"
             className="mt-6 inline-block px-6 py-2 border-[1px] border-gray-500 text-blue-700 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300"
           >
-            Get in Touch
+            My Process
           </Link>
         </motion.div>
       </div>
