@@ -99,7 +99,7 @@ const ProcessTimeline = () => {
         From Vision to Execution: My Development Process
         <p className="text-gray-400 text-sm text-center pt-2 px-3">
           I follow a structured process to turn ideas into functional,
-          user-friendly products—ensuring efficiency, innovation, and seamless
+          user-friendly <br /> products—ensuring efficiency, innovation, and
           execution.
         </p>
       </motion.h2>
