@@ -85,13 +85,18 @@ const ProcessTimeline = () => {
   return (
     <section className="py-20 bg-gray-900 text-white">
       <motion.h2
-        className="text-4xl font-bold text-center text-blue-400 mb-12"
+        className="text-xl md:text-2xl font-bold text-center text-blue-400 mb-12"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        My Process: From Idea to Code
+        From Vision to Execution: My Development Process
+        <p className="text-gray-400 text-sm text-center pt-2">
+          I follow a structured process to turn ideas into functional,
+          user-friendly products—ensuring efficiency, innovation, and seamless
+          execution.
+        </p>
       </motion.h2>
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
         {/* Left Side: Timeline */}
