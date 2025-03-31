@@ -8,6 +8,8 @@ import {
 } from "react-icons/fa";
 import illustration from "/illustration.svg"; // Add an illustration in your assets
 
+import { useEffect } from "react";
+
 const steps = [
   {
     id: 1,
@@ -82,6 +84,9 @@ const steps = [
 ];
 
 const ProcessTimeline = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="py-20 bg-gray-900 text-white">
       <motion.h2
@@ -89,10 +94,10 @@ const ProcessTimeline = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         From Vision to Execution: My Development Process
-        <p className="text-gray-400 text-sm text-center pt-2">
+        <p className="text-gray-400 text-sm text-center pt-2 px-3">
           I follow a structured process to turn ideas into functional,
           user-friendly products—ensuring efficiency, innovation, and seamless
           execution.
@@ -126,7 +131,9 @@ const ProcessTimeline = () => {
 
                 {/* Step Details */}
                 <div>
-                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <h3 className="text-[16px] md:text-xl font-semibold">
+                    {step.title}
+                  </h3>
                   <p className="text-gray-300">{step.description}</p>
                 </div>
               </motion.div>
